@@ -1,0 +1,470 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f1c2c, #ff4e50, #f9d423);
+  background-size: 600% 600%;
+  animation: movingGradient 18s ease infinite;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  color: #000000;
+  text-align: center;
+}
+
+#menu-icon {
+  position: absolute;
+  left: .5rem;
+  top: .5rem;
+}
+
+nav {
+  height: 100%;
+  width: 18rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: -20rem;
+  background-color: #fff;
+  justify-self: start;
+  line-height: 4rem;
+  text-align: center;
+  border-bottom: 2px solid black;
+  z-index: 1;
+}
+
+nav h3 {
+  border-bottom: 2px solid black;
+}
+
+nav > div,
+nav h3 {
+  margin: 0 1rem;
+  padding: 0 0.5rem;
+}
+
+
+.new-song-container {
+  display: none;
+  align-items: baseline;
+  font-size: .9rem;
+  width: 17.5rem;
+  border: 2px solid black;
+}
+
+#cancel-icon{
+  align-self: flex-start;
+  margin: .5rem 0 0 .5rem;
+}
+
+#add-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: translateY(0.4rem);
+}
+
+.music-card {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 25rem;
+  height: 42rem;
+  grid-template-rows: 3fr 2rem 2fr 8rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 7px 16px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 7px 16px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 7px 16px -3px rgba(0, 0, 0, 0.75);
+}
+
+#album-img {
+  width: 100%;
+  height: 100%;
+  background: url("https://res.cloudinary.com/dbzvr3l7j/image/upload/v1740241407/Shape_of_U_lrisr7.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  align-self: flex-start;
+  border-radius: 10px;
+}
+
+/*ICONS*/
+
+.track-slider {
+  margin-top: 1.3rem;
+  width: 80%;
+  border-radius: 15px;
+}
+.track-slider input[type="range"] {
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+.track-slider input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+}
+
+.track-slider input[type="range"]:focus {
+  outline: none;
+}
+
+.track-slider input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.track-slider input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #fff;
+  cursor: pointer;
+  margin-top: -14px;
+}
+
+.track-slider input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #000;
+  cursor: pointer;
+}
+
+.track-slider input[type="range"]::-ms-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #000;
+  cursor: pointer;
+}
+.track-slider input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.805);
+  border-radius: 8px;
+}
+
+.track-slider input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.805);
+  border-radius: 8px;
+}
+
+.track-slider input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.805);
+  border-radius: 8px;
+}
+.track-slider input[type="range"]::-ms-fill-lower {
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+}
+
+.track-slider input[type="range"]::-ms-fill-upper {
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+}
+
+.icons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  transform: translateY(2rem);
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+#play {
+  border: 5px solid black;
+  width: 5rem;
+  height: 5rem;
+  display: grid;
+  place-content: center;
+  font-size: 2.8rem;
+  margin: 0 1rem;
+  border-radius: 50%;
+  background-color: rgb(196, 196, 196);
+}
+
+#volume {
+  width: 2.3rem;
+  height: 2.3rem;
+  margin-right: 1rem;
+}
+
+#volume-slider:hover {
+  cursor: pointer;
+}
+
+#left,
+#repeat {
+  margin-left: 1.4rem;
+}
+
+#repeat,
+#mix {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+/*FOOTER*/
+
+.title {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+#current-song-name {
+  font-size: 1.5rem;
+}
+
+@keyframes movingGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .container {
+    padding: 25px 35px;
+  }
+  
+  .music-card {
+    width: 22rem;
+    height: 38rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 20px 30px;
+    border-radius: 15px;
+  }
+  
+  .music-card {
+    width: 20rem;
+    height: 36rem;
+    grid-template-rows: 3fr 1.8rem 2fr 7rem;
+  }
+  
+  #album-img {
+    height: 90%;
+  }
+  
+  .track-slider {
+    margin-top: 1rem;
+  }
+  
+  #play {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: 400% 400%;
+  }
+  
+  .container {
+    width: 95%;
+    padding: 15px 25px;
+  }
+  
+  .music-card {
+    width: 18rem;
+    height: 34rem;
+    grid-template-rows: 3fr 1.5rem 2fr 6rem;
+  }
+  
+  #current-song-name {
+    font-size: 1.3rem;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+  }
+  
+  .icon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+  
+  #repeat, #mix {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    width: 16rem;
+    line-height: 3.5rem;
+  }
+  
+  .new-song-container {
+    width: 15.5rem;
+  }
+  
+  .container {
+    padding: 10px 20px;
+    border-radius: 12px;
+  }
+  
+  .music-card {
+    width: 16rem;
+    height: 30rem;
+    grid-template-rows: 3fr 1.2rem 2fr 5rem;
+  }
+  
+  #play {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.2rem;
+  }
+  
+  .track-slider input[type="range"]::-webkit-slider-thumb {
+    height: 16px;
+    width: 16px;
+  }
+  
+  .icons div:nth-child(2) {
+    transform: translateY(1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: 300% 300%;
+    animation: movingGradient 12s ease infinite;
+  }
+  
+  .container {
+    padding: 8px 15px;
+    border-radius: 10px;
+  }
+  
+  .music-card {
+    width: 14rem;
+    height: 28rem;
+    grid-template-rows: 3fr 1rem 2fr 4.5rem;
+  }
+  
+  #current-song-name {
+    font-size: 1.1rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+  
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  #repeat, #mix {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  
+  #volume {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  #play {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .music-card {
+    width: 12rem;
+    height: 26rem;
+  }
+  
+  #menu-icon {
+    font-size: 1.8rem;
+  }
+  
+  .track-slider {
+    margin-top: 0.8rem;
+  }
+  
+  .icons div:nth-child(2) {
+    transform: translateY(1rem);
+  }
+}
