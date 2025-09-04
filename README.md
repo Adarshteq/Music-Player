@@ -4,7 +4,7 @@ A simple and responsive music player built using HTML, CSS, and JavaScript.
 
 This project demonstrates core front-end development concepts such as the DOM, media playback, event handling, and responsive design.
 
-🔴 Live Demo  https://adarshteq.github.io/Music-Player/
+🔴 [Live Demo](https://adarshteq.github.io/Music-Player/)
 
 🚀 Features 🔊 Play, Pause, Next, Previous track and Volume controls
 
